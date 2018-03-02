@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="StructureMap" Version="4.6.1" />
-    <PackageReference Include="structuremap.web" Version="4.0.0.315" />
   </ItemGroup>
 
 </Project>

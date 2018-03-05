@@ -1,8 +1,5 @@
-namespace Application.DependencyResolution {
+namespace DependencyResolution.DependencyResolution {
     using System.Web;
-
-    using Application.App_Start;
-
     using StructureMap.Web.Pipeline;
 
     public class StructureMapScopeModule : IHttpModule {

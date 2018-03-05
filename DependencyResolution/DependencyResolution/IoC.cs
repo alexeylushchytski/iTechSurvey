@@ -16,7 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Application.DependencyResolution {
+namespace DependencyResolution.DependencyResolution {
     using StructureMap;
 	
     public static class IoC {

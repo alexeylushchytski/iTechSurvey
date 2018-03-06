@@ -18,6 +18,6 @@ namespace DAL.Interfaces
         void Dispose();
 
 
-        IRepository<T> GenericRepository<T>() where T : class;
+        IRepository<T> GetRepository<T>() where T : class;
     }
 }

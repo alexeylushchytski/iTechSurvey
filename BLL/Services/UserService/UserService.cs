@@ -21,7 +21,7 @@ namespace BLL.Services.UserService
 
         public IEnumerable<User> GetUsers()
         {
-            return _unitOfWork.GenericRepository<User>().Entities;
+            return _unitOfWork.GetRepository<User>().Entities;
         }
     }
 }

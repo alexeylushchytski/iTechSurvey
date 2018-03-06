@@ -56,7 +56,7 @@ namespace DAL
         }
 
 
-        public IRepository<T> GenericRepository<T>() where T : class
+        public IRepository<T> GetRepository<T>() where T : class
         {
             return new GenericRepository<T>(_dbContext);
         }

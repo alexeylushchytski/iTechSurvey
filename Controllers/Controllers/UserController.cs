@@ -1,39 +1,32 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using DAL;
-using DAL.Interfaces;
+using BLL.Services.UserService;
 using Models;
 
 namespace Controllers.Controllers
 {
     public class UserController : ApiController
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly UserService _userService;
 
 
-        public UserController(IUnitOfWork unit)
+        public UserController(UserService userService)
         {
-            this._unitOfWork = unit;
+            _userService = userService;
         }
 
         public UserController() { }
 
-
-        public IEnumerable<User> GetUsers()
+        [HttpGet]
+        public IEnumerable<User> Users()
         {
-            User user = new User
-            {
-                Name = "Name11",
-                Email = "ale1x@mail.com",
-                Password = "Pasdsasdfasdfd"
-            };
-            _unitOfWork.GenericRepository<User>().Add(user);
-            _unitOfWork.Commit();
-            return null;
+            return _userService.GetUsers();
         }
+        
     }
 }

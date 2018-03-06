@@ -115,16 +115,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
-      <Name>DAL</Name>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{accfb85f-a1d1-4295-8c0e-88c44767b5ee}</Project>
+      <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DependencyResolution\DependencyResolution.csproj">
       <Project>{bb4a104a-22a4-483a-8fbb-111b2ec3f056}</Project>
       <Name>DependencyResolution</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
+      <Project>{702C7140-C7A4-40AA-B035-04F3C4D82ADD}</Project>
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>

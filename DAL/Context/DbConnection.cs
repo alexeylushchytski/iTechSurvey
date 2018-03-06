@@ -8,9 +8,9 @@ using Models;
 
 namespace DAL.Context
 {
-    internal sealed class DbConnection : DbContext
+    public sealed class DbConnection : DbContext
     {
-        internal DbConnection() : base("DefaultString") { }
+        public DbConnection() : base("DefaultString") { }
         internal DbSet<User> Users { get; set; }
     }
 }

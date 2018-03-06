@@ -8,6 +8,7 @@ namespace Models
     {
         [Key]
         public int Id { get; set; }
+
         [Required(ErrorMessage = "Enter your name")]
         public string Name { get; set; }
 

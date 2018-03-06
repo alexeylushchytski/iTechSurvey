@@ -12,25 +12,27 @@ namespace Controllers.Controllers
 {
     public class UserController : ApiController
     {
-        private UnitOfWork unitOfWork = new UnitOfWork();
+        private readonly IUnitOfWork _unitOfWork;
 
-        //public UserController(IUnitOfWork unit)
-        //{
-        //    this.unitOfWork = unit;
-        //}
+
+        public UserController(IUnitOfWork unit)
+        {
+            this._unitOfWork = unit;
+        }
 
         public UserController() { }
+
 
         public IEnumerable<User> GetUsers()
         {
             User user = new User
             {
-                Name = "Name1",
-                Email = "alex@mail.com",
+                Name = "Name11",
+                Email = "ale1x@mail.com",
                 Password = "Pasdsasdfasdfd"
             };
-            unitOfWork.UsersRepository.Add(user);
-            unitOfWork.Commit();
+            _unitOfWork.GenericRepository<User>().Add(user);
+            _unitOfWork.Commit();
             return null;
         }
     }

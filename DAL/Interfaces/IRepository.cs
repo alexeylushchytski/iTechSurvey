@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace DAL.Interfaces
 {
@@ -15,5 +13,12 @@ namespace DAL.Interfaces
 
 
         void Add(T entity);
+
+
+        void Update(T entity);
+
+
+        T GetById(int id);
+
     }
 }

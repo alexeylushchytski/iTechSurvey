@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -13,17 +14,16 @@ namespace DAL
 {
     public sealed class UnitOfWork : IUnitOfWork
     {
-        private readonly DbConnection _dbContext;
+        private readonly DbContext _dbContext;
 
-        #region Repositories
-        public IRepository<User> UsersRepository => new GenericRepository<User>(_dbContext);
-        #endregion
 
-        public UnitOfWork()
+        public UnitOfWork(){ }
+
+
+        public UnitOfWork(DbContext dbConnection)
         {
-            _dbContext = new DbConnection();
+            _dbContext = dbConnection;
         }
-
 
         public void Commit()
         {
@@ -35,7 +35,7 @@ namespace DAL
         {
             _dbContext.Dispose();
         }
-
+       
 
         public void RejectChanges()
         {
@@ -53,6 +53,12 @@ namespace DAL
                         break;
                 }
             }
+        }
+
+
+        public IRepository<T> GenericRepository<T>() where T : class
+        {
+            return new GenericRepository<T>(_dbContext);
         }
     }
 }

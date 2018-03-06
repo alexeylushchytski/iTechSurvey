@@ -1,27 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 using DAL.Context;
 using DAL.Interfaces;
 
 namespace DAL.Repositories
 {
-    class GenericRepository<T> : IRepository<T> where T : class
+    public class GenericRepository<T> : IRepository<T> where T : class
     {
-        private readonly DbConnection _dbContext;
+        private readonly DbContext _dbContext;
 
         private IDbSet<T> TableDbSet => _dbContext.Set<T>();
 
-        public IQueryable<T> Entities => TableDbSet;
 
-
-        public GenericRepository(DbConnection dbContext)
+        public GenericRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
         }
+
+        public IQueryable<T> Entities => TableDbSet;
 
 
         public void Remove(T entity)
@@ -34,5 +33,19 @@ namespace DAL.Repositories
         {
             TableDbSet.Add(entity);
         }
+
+
+        public void Update(T entity)
+        {
+            _dbContext.Entry(entity).State = EntityState.Modified;
+        }
+
+
+        public T GetById(int id)
+        {
+            return TableDbSet.Find(id);
+        }
+
+        
     }
 }

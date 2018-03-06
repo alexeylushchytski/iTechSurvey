@@ -15,10 +15,15 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Data.Entity;
+using DAL;
+using DAL.Context;
+using DAL.Interfaces;
 namespace DependencyResolution.DependencyResolution {
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
-	
+    using System.Web.Configuration;
+
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors
 
@@ -29,6 +34,9 @@ namespace DependencyResolution.DependencyResolution {
                     scan.WithDefaultConventions();
                 });
             //For<IExample>().Use<Example>();
+            For<DbContext>().Use<DbConnection>();
+            For<IUnitOfWork>().Use<UnitOfWork>();
+            For<UnitOfWork>().Transient();
         }
 
         #endregion

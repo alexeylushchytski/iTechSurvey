@@ -7,38 +7,39 @@ using System.Threading.Tasks;
 using DAL.Context;
 using DAL.Interfaces;
 using DAL.Repositories;
+using Models;
 
 namespace DAL
 {
-    public class UnitOfWork : IUnitOfWork
+    public sealed class UnitOfWork : IUnitOfWork
     {
-        public readonly DbConnection DbContext;
+        private readonly DbConnection _dbContext;
 
         #region Repositories
-
+        public IRepository<User> UsersRepository => new GenericRepository<User>(_dbContext);
         #endregion
 
-        public UnitOfWork(DbConnection dbContext)
+        public UnitOfWork()
         {
-            DbContext = dbContext;
+            _dbContext = new DbConnection();
         }
 
 
         public void Commit()
         {
-            DbContext.SaveChanges();
+            _dbContext.SaveChanges();
         }
 
 
         public void Dispose()
         {
-            DbContext.Dispose();
+            _dbContext.Dispose();
         }
 
 
         public void RejectChanges()
         {
-            foreach (var entry in DbContext.ChangeTracker.Entries()
+            foreach (var entry in _dbContext.ChangeTracker.Entries()
                 .Where(e => e.State != EntityState.Unchanged))
             {
                 switch (entry.State)

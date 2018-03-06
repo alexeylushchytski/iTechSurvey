@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         void Commit();
 

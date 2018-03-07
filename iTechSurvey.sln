@@ -5,13 +5,13 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{501D2F30-76C1-4F8B-A43B-2DFF4CF03C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{702C7140-C7A4-40AA-B035-04F3C4D82ADD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.DomainModel", "Models\iTechArt.Survey.DomainModel.csproj", "{702C7140-C7A4-40AA-B035-04F3C4D82ADD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{ACCFB85F-A1D1-4295-8C0E-88C44767B5EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.BLL", "BLL\iTechArt.Survey.BLL.csproj", "{ACCFB85F-A1D1-4295-8C0E-88C44767B5EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{DF5116AF-2EF5-42EE-9E8A-9943207EF8AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.WebApi", "Controllers\iTechArt.Survey.WebApi.csproj", "{DF5116AF-2EF5-42EE-9E8A-9943207EF8AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyResolution", "DependencyResolution\DependencyResolution.csproj", "{BB4A104A-22A4-483A-8FBB-111B2EC3F056}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.DependencyResolution", "DependencyResolution\iTechArt.Survey.DependencyResolution.csproj", "{BB4A104A-22A4-483A-8FBB-111B2EC3F056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

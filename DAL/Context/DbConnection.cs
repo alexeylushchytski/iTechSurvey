@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using Models;
+using iTechArt.Survey.DomainModel;
 
 namespace DAL.Context
 {

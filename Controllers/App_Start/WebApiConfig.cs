@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace Controllers
+namespace iTechArt.Survey.WebApi
 {
     public static class WebApiConfig
     {

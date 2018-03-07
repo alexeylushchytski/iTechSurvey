@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using BLL.Interfaces;
-using Models;
+using iTechArt.Survey.BLL.Interfaces;
+using iTechArt.Survey.DomainModel;
 
-namespace Controllers.Controllers
+namespace iTechArt.Survey.WebApi.Controllers
 {
     public class UserController : ApiController
     {

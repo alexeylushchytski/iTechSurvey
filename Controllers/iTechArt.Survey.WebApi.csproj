@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Controllers</RootNamespace>
-    <AssemblyName>Controllers</AssemblyName>
+    <RootNamespace>iTechArt.Survey.WebApi</RootNamespace>
+    <AssemblyName>iTechArt.Survey.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -115,17 +115,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
+    <ProjectReference Include="..\BLL\iTechArt.Survey.BLL.csproj">
       <Project>{accfb85f-a1d1-4295-8c0e-88c44767b5ee}</Project>
-      <Name>BLL</Name>
+      <Name>iTechArt.Survey.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DependencyResolution\DependencyResolution.csproj">
+    <ProjectReference Include="..\DependencyResolution\iTechArt.Survey.DependencyResolution.csproj">
       <Project>{bb4a104a-22a4-483a-8fbb-111b2ec3f056}</Project>
-      <Name>DependencyResolution</Name>
+      <Name>iTechArt.Survey.DependencyResolution</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Models\Models.csproj">
+    <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702C7140-C7A4-40AA-B035-04F3C4D82ADD}</Project>
-      <Name>Models</Name>
+      <Name>iTechArt.Survey.DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

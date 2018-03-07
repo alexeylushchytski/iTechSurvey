@@ -16,11 +16,12 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Data.Entity;
-using BLL.Interfaces;
-using BLL.Services.UserService;
 using DAL;
 using DAL.Context;
 using DAL.Interfaces;
+using iTechArt.Survey.BLL.Interfaces;
+using iTechArt.Survey.BLL.Services.UserService;
+
 namespace DependencyResolution.DependencyResolution
 {
     using StructureMap.Configuration.DSL;

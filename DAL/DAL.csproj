@@ -56,9 +56,9 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj">
+    <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
-      <Name>Models</Name>
+      <Name>iTechArt.Survey.DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{BB4A104A-22A4-483A-8FBB-111B2EC3F056}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DependencyResolution</RootNamespace>
-    <AssemblyName>DependencyResolution</AssemblyName>
+    <RootNamespace>iTechArt.Survey.DependencyResolution</RootNamespace>
+    <AssemblyName>iTechArt.Survey.DependencyResolution</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -83,17 +83,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
+    <ProjectReference Include="..\BLL\iTechArt.Survey.BLL.csproj">
       <Project>{accfb85f-a1d1-4295-8c0e-88c44767b5ee}</Project>
-      <Name>BLL</Name>
+      <Name>iTechArt.Survey.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Models\Models.csproj">
+    <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
-      <Name>Models</Name>
+      <Name>iTechArt.Survey.DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

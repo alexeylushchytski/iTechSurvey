@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Models;
+using iTechArt.Survey.DomainModel;
 
-namespace BLL.Interfaces
+namespace iTechArt.Survey.BLL.Interfaces
 {
     public interface IUserService
     {

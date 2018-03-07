@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using BLL.Interfaces;
 using DAL.Interfaces;
-using Models;
+using iTechArt.Survey.BLL.Interfaces;
+using iTechArt.Survey.DomainModel;
 
-namespace BLL.Services.UserService
+namespace iTechArt.Survey.BLL.Services.UserService
 {
     public sealed class UserService : IUserService
     {

@@ -1,4 +1,4 @@
-﻿namespace Models
+﻿namespace iTechArt.Survey.DomainModel
 {
     public class User
     {

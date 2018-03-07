@@ -16,14 +16,17 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using iTechart.Survey.DAL;
-using iTechart.Survey.DAL.Context;
 using iTechart.Survey.DAL.Interfaces;
+using iTechart.Survey.DAL.Context;
 using iTechArt.Repositories.EntityFramework.Interfaces;
+using iTechArt.Repositories.EntityFramework.Repository;
+using iTechArt.Repositories.Interfaces;
 using iTechArt.Survey.BLL.Interfaces;
 using iTechArt.Survey.BLL.Services.UserService;
 
 namespace DependencyResolution.DependencyResolution
 {
+    using iTechArt.Survey.DomainModel;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
 
@@ -36,8 +39,9 @@ namespace DependencyResolution.DependencyResolution
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                 });
-            For<IUserService>().Use<UserService>();
+            For<IRepository<User>>().Use<Repository<User>>();
             For<IDbContext>().Use<SurveyContext>();
+            For<IUserService>().Use<UserService>();
             For<ISurveyUnitOfWork>().Use<SurveyUnitOfWork>();
         }
         #endregion

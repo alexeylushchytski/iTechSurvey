@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using iTechArt.Repositories.EntityFramework.Interfaces;
@@ -21,7 +22,7 @@ namespace iTechArt.Repositories.EntityFramework.Repository
         }
 
 
-        public IReadOnlyCollection<T> Entities => ((IReadOnlyCollection<T>)TableDbSet);
+        public IReadOnlyCollection<T> Entities => _dbContext.Set<T>().ToList();
 
 
         public void Remove(T entity)

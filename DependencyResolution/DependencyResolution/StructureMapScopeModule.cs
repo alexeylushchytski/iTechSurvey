@@ -15,7 +15,6 @@ namespace DependencyResolution.DependencyResolution {
                 StructuremapMvc.StructureMapDependencyScope.DisposeNestedContainer();
             };
         }
-
         #endregion
     }
 }

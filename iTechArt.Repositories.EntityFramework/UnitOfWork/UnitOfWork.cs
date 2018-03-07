@@ -36,7 +36,7 @@ namespace iTechArt.Repositories.EntityFramework.UnitOfWork
         }
 
 
-        public IRepository<T> GetRepository<T>() where T : class
+        public virtual IRepository<T> GetRepository<T>() where T : class
         {
             return new Repository<T>(_dbContext);
         }

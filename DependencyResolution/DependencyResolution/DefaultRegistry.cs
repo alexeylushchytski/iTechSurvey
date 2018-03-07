@@ -20,10 +20,10 @@ using BLL.Services.UserService;
 using DAL;
 using DAL.Context;
 using DAL.Interfaces;
-namespace DependencyResolution.DependencyResolution {
+namespace DependencyResolution.DependencyResolution
+{
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
-    using System.Web.Configuration;
 
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors

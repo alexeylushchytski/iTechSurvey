@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL.Context;
 using DAL.Interfaces;
 using DAL.Repositories;
-using Models;
 
 namespace DAL
 {

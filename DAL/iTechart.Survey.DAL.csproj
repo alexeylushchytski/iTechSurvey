@@ -47,22 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\DbConnection.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Context\EntitiesTypeConfiguration\UserEntityConfiguration.cs" />
+    <Compile Include="Context\SurveyContext.cs" />
+    <Compile Include="Interfaces\ISurveyUnitOfWork.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="SurveyUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\iTechArt.Repositories.EntityFramework\iTechArt.Repositories.EntityFramework.csproj">
+      <Project>{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}</Project>
+      <Name>iTechArt.Repositories.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Repositories\iTechArt.Repositories.csproj">
+      <Project>{1E76A240-115A-4A1E-A2C5-A782B697CF7B}</Project>
+      <Name>iTechArt.Repositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
       <Name>iTechArt.Survey.DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

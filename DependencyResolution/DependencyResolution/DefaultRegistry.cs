@@ -15,10 +15,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Data.Entity;
-using DAL;
-using DAL.Context;
-using DAL.Interfaces;
+using iTechart.Survey.DAL;
+using iTechart.Survey.DAL.Context;
+using iTechart.Survey.DAL.Interfaces;
+using iTechArt.Repositories.EntityFramework.Interfaces;
 using iTechArt.Survey.BLL.Interfaces;
 using iTechArt.Survey.BLL.Services.UserService;
 
@@ -37,11 +37,9 @@ namespace DependencyResolution.DependencyResolution
                     scan.WithDefaultConventions();
                 });
             For<IUserService>().Use<UserService>();
-            For<DbContext>().Use<DbConnection>();
-            For<IUnitOfWork>().Use<UnitOfWork>();
-            For<UnitOfWork>().Transient();
+            For<IDbContext>().Use<SurveyContext>();
+            For<ISurveyUnitOfWork>().Use<SurveyUnitOfWork>();
         }
-
         #endregion
     }
 }

@@ -91,6 +91,14 @@
       <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
       <Name>iTechart.Survey.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Repositories.EntityFramework\iTechArt.Repositories.EntityFramework.csproj">
+      <Project>{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}</Project>
+      <Name>iTechArt.Repositories.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Repositories\iTechArt.Repositories.csproj">
+      <Project>{1E76A240-115A-4A1E-A2C5-A782B697CF7B}</Project>
+      <Name>iTechArt.Repositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
       <Name>iTechArt.Survey.DomainModel</Name>

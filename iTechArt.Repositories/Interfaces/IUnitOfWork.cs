@@ -1,8 +1,10 @@
-﻿namespace DAL.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace iTechArt.Repositories.Interfaces
 {
     public interface IUnitOfWork
     {
-        void Commit();
+        Task<int> CommitAsync();
 
 
         void Dispose();

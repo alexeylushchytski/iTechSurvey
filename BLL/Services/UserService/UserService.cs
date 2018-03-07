@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DAL.Interfaces;
+using iTechart.Survey.DAL.Interfaces;
 using iTechArt.Survey.BLL.Interfaces;
 using iTechArt.Survey.DomainModel;
 
@@ -7,10 +7,10 @@ namespace iTechArt.Survey.BLL.Services.UserService
 {
     public sealed class UserService : IUserService
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ISurveyUnitOfWork _unitOfWork;
 
 
-        public UserService(IUnitOfWork unitOfWork)
+        public UserService(ISurveyUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }

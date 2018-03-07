@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
-namespace DAL.Interfaces
+namespace iTechArt.Repositories.Interfaces
 {
     public interface IRepository<T> where T : class
     {
@@ -19,5 +22,13 @@ namespace DAL.Interfaces
 
         T GetById(int id);
 
+
+        Task<T> GetByAsync(Expression<Func<T, bool>> predicate);
+
+
+        Task<IReadOnlyCollection<T>>  GetAllAsync();
+
+
+        Task<int> DeleteRange(IEnumerable<T> collection);
     }
 }

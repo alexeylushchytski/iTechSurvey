@@ -87,9 +87,9 @@
       <Project>{accfb85f-a1d1-4295-8c0e-88c44767b5ee}</Project>
       <Name>iTechArt.Survey.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
+    <ProjectReference Include="..\DAL\iTechart.Survey.DAL.csproj">
       <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
-      <Name>DAL</Name>
+      <Name>iTechart.Survey.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>

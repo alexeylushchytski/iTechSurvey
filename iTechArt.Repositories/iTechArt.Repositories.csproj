@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ACCFB85F-A1D1-4295-8C0E-88C44767B5EE}</ProjectGuid>
+    <ProjectGuid>{1E76A240-115A-4A1E-A2C5-A782B697CF7B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>iTechArt.Survey.BLL</RootNamespace>
-    <AssemblyName>iTechArt.Survey.BLL</AssemblyName>
+    <RootNamespace>iTechArt.Repositories</RootNamespace>
+    <AssemblyName>iTechArt.Repositories</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,30 +32,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IDbContext.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\UserService\UserService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DAL\iTechart.Survey.DAL.csproj">
-      <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
-      <Name>iTechart.Survey.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
-      <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
-      <Name>iTechArt.Survey.DomainModel</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

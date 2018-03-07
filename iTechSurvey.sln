@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{501D2F30-76C1-4F8B-A43B-2DFF4CF03C21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechart.Survey.DAL", "DAL\iTechart.Survey.DAL.csproj", "{501D2F30-76C1-4F8B-A43B-2DFF4CF03C21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.DomainModel", "Models\iTechArt.Survey.DomainModel.csproj", "{702C7140-C7A4-40AA-B035-04F3C4D82ADD}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.DependencyResolution", "DependencyResolution\iTechArt.Survey.DependencyResolution.csproj", "{BB4A104A-22A4-483A-8FBB-111B2EC3F056}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.BLL.DTO", "iTechArt.Survey.BLL.DTO\iTechArt.Survey.BLL.DTO.csproj", "{917E1EDE-7FDA-435A-96C8-683E07F720FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Repositories", "iTechArt.Repositories\iTechArt.Repositories.csproj", "{1E76A240-115A-4A1E-A2C5-A782B697CF7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Repositories.EntityFramework", "iTechArt.Repositories.EntityFramework\iTechArt.Repositories.EntityFramework.csproj", "{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{917E1EDE-7FDA-435A-96C8-683E07F720FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{917E1EDE-7FDA-435A-96C8-683E07F720FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{917E1EDE-7FDA-435A-96C8-683E07F720FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E76A240-115A-4A1E-A2C5-A782B697CF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E76A240-115A-4A1E-A2C5-A782B697CF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E76A240-115A-4A1E-A2C5-A782B697CF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E76A240-115A-4A1E-A2C5-A782B697CF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

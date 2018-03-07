@@ -10,9 +10,6 @@ namespace iTechArt.Survey.BLL.Services.UserService
         private readonly ISurveyUnitOfWork _unitOfWork;
 
 
-
-
-
         public UserService(ISurveyUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;

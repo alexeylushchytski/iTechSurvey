@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DAL.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        IQueryable<T> Entities { get; }
+        IReadOnlyCollection<T> Entities { get; }
 
 
         void Remove(T entity);

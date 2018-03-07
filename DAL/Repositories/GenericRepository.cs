@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using DAL.Interfaces;
 
@@ -16,7 +17,8 @@ namespace DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public IQueryable<T> Entities => TableDbSet;
+
+        public IReadOnlyCollection<T> Entities => ((IReadOnlyCollection<T>) TableDbSet);
 
 
         public void Remove(T entity)

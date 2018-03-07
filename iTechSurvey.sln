@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.WebApi", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.DependencyResolution", "DependencyResolution\iTechArt.Survey.DependencyResolution.csproj", "{BB4A104A-22A4-483A-8FBB-111B2EC3F056}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Survey.BLL.DTO", "iTechArt.Survey.BLL.DTO\iTechArt.Survey.BLL.DTO.csproj", "{917E1EDE-7FDA-435A-96C8-683E07F720FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BB4A104A-22A4-483A-8FBB-111B2EC3F056}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB4A104A-22A4-483A-8FBB-111B2EC3F056}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB4A104A-22A4-483A-8FBB-111B2EC3F056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917E1EDE-7FDA-435A-96C8-683E07F720FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917E1EDE-7FDA-435A-96C8-683E07F720FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917E1EDE-7FDA-435A-96C8-683E07F720FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917E1EDE-7FDA-435A-96C8-683E07F720FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

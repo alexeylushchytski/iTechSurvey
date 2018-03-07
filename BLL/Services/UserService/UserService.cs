@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using BLL.Interfaces;
 using DAL.Interfaces;
 using Models;
 
 namespace BLL.Services.UserService
 {
-    public sealed class UserService
+    public sealed class UserService : IUserService
     {
         private readonly IUnitOfWork _unitOfWork;
 

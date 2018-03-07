@@ -5,9 +5,6 @@
         void Commit();
 
 
-        void RejectChanges();
-
-
         void Dispose();
 
 

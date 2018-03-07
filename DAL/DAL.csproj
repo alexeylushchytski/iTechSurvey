@@ -50,26 +50,10 @@
     <Compile Include="Context\DbConnection.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201803060845506_UserModel.cs" />
-    <Compile Include="Migrations\201803060845506_UserModel.Designer.cs">
-      <DependentUpon>201803060845506_UserModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803061257567_UserModel1.cs" />
-    <Compile Include="Migrations\201803061257567_UserModel1.Designer.cs">
-      <DependentUpon>201803061257567_UserModel1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803060845506_UserModel.resx">
-      <DependentUpon>201803060845506_UserModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803061257567_UserModel1.resx">
-      <DependentUpon>201803061257567_UserModel1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">

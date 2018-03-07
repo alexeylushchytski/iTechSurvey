@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using System.Linq;
 using DAL.Interfaces;
 using DAL.Repositories;
 
@@ -30,28 +29,9 @@ namespace DAL
         }
        
 
-        public void RejectChanges()
-        {
-            foreach (var entry in _dbContext.ChangeTracker.Entries()
-                .Where(e => e.State != EntityState.Unchanged))
-            {
-                switch (entry.State)
-                {
-                    case EntityState.Added:
-                        entry.State = EntityState.Detached;
-                        break;
-                    case EntityState.Modified:
-                    case EntityState.Deleted:
-                        entry.Reload();
-                        break;
-                }
-            }
-        }
-
-
         public IRepository<T> GetRepository<T>() where T : class
         {
-            return new GenericRepository<T>(_dbContext);
+            return new Repository<T>(_dbContext);
         }
     }
 }

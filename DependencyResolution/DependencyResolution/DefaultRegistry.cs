@@ -16,6 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Data.Entity;
+using BLL.Interfaces;
 using BLL.Services.UserService;
 using DAL;
 using DAL.Context;
@@ -34,7 +35,7 @@ namespace DependencyResolution.DependencyResolution
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                 });
-            For<UserService>().Transient();
+            For<IUserService>().Use<UserService>();
             For<DbContext>().Use<DbConnection>();
             For<IUnitOfWork>().Use<UnitOfWork>();
             For<UnitOfWork>().Transient();

@@ -4,14 +4,14 @@ using DAL.Interfaces;
 
 namespace DAL.Repositories
 {
-    public class GenericRepository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly DbContext _dbContext;
 
         private IDbSet<T> TableDbSet => _dbContext.Set<T>();
 
 
-        public GenericRepository(DbContext dbContext)
+        public Repository(DbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -41,7 +41,5 @@ namespace DAL.Repositories
         {
             return TableDbSet.Find(id);
         }
-
-        
     }
 }

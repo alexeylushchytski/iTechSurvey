@@ -12,6 +12,7 @@ namespace iTechart.Survey.DAL.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            this.Configuration.LazyLoadingEnabled = false;
             modelBuilder.Configurations.Add(new UserEntityConfiguration());
         }
 

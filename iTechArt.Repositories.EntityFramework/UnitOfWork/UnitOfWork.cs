@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using iTechArt.Repositories.EntityFramework.Interfaces;
 using iTechArt.Repositories.EntityFramework.Repository;
 using iTechArt.Repositories.Interfaces;

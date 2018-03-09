@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
 using iTechart.Survey.DAL.Context.EntitiesTypeConfiguration;
 using iTechArt.Repositories.EntityFramework.Interfaces;
-using iTechArt.Survey.DomainModel;
 
 namespace iTechart.Survey.DAL.Context
 {

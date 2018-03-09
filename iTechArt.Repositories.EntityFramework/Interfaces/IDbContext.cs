@@ -11,7 +11,9 @@ namespace iTechArt.Repositories.EntityFramework.Interfaces
 
         Task<int> SaveChangesAsync();
 
+
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
+
 
         void Dispose();
     }

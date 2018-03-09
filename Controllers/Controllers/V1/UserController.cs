@@ -1,5 +1,4 @@
-﻿using System;
-using iTechArt.Survey.BLL.Interfaces;
+﻿using iTechArt.Survey.BLL.Interfaces;
 using Microsoft.Web.Http;
 using System.Net;
 using System.Net.Http;

@@ -1,10 +1,8 @@
+using System.Data.Entity.Migrations;
 using iTechart.Survey.DAL.Context;
 
-namespace DAL.Migrations
+namespace iTechart.Survey.DAL.Migrations
 {
-    using System.Data.Entity.Migrations;
-
-
     internal sealed class Configuration : DbMigrationsConfiguration<SurveyContext>
     {
         public Configuration()

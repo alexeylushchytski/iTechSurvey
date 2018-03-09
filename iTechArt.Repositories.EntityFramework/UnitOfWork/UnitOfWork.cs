@@ -24,7 +24,7 @@ namespace iTechArt.Repositories.EntityFramework.UnitOfWork
         public UnitOfWork() { }
 
 
-        public async Task<int>  CommitAsync()
+        public virtual async Task<int>  CommitAsync()
         {
             return await _dbContext.SaveChangesAsync();
         }
@@ -32,7 +32,7 @@ namespace iTechArt.Repositories.EntityFramework.UnitOfWork
 
         public void Dispose()
         {
-            _dbContext.Dispose();
+            this._dbContext.Dispose();
         }
 
 

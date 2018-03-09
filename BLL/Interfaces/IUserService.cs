@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using iTechArt.Survey.DomainModel;
 
 namespace iTechArt.Survey.BLL.Interfaces
 {
     public interface IUserService
     {
-        IEnumerable<User> GetUsers();
+        IReadOnlyCollection<User> GetUsers();
     }
 }

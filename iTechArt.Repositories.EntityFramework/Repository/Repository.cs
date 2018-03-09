@@ -22,7 +22,7 @@ namespace iTechArt.Repositories.EntityFramework.Repository
         }
 
 
-        public IReadOnlyCollection<T> Entities => _dbContext.Set<T>().ToList();
+        public IReadOnlyCollection<T> Entities => TableDbSet.ToList();
 
 
         public void Remove(T entity)

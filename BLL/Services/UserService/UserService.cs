@@ -10,13 +10,14 @@ namespace iTechArt.Survey.BLL.Services.UserService
         private readonly ISurveyUnitOfWork _unitOfWork;
 
 
+
         public UserService(ISurveyUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
 
-        public IEnumerable<User> GetUsers()
+        public IReadOnlyCollection<User> GetUsers()
         {
             return _unitOfWork.GetRepository<User>().Entities;
         }

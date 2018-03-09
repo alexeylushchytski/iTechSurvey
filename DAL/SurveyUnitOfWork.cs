@@ -17,9 +17,16 @@ namespace iTechart.Survey.DAL
             _dbContext = dbContext;
         }
 
+
         public override IRepository<T> GetRepository<T>()
         {
             return new Repository<T>(_dbContext);
+        }
+
+
+        public override async Task<int> CommitAsync()
+        {
+            return await _dbContext.SaveChangesAsync();
         }
     }
 }

@@ -3,9 +3,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using iTechArt.Survey.BLL.Interfaces;
+using Microsoft.Web.Http;
 
-namespace iTechArt.Survey.WebApi.Controllers
+namespace iTechArt.Survey.WebApi.v1.Controllers
 {
+    [ApiVersion("1")]
+    [RoutePrefix("api/v{version:ApiVersion}/User")]
     public class UserController : ApiController
     {
         private readonly IUserService _userService;
@@ -18,6 +21,7 @@ namespace iTechArt.Survey.WebApi.Controllers
 
 
         [HttpGet]
+        [Route("Users")]
         public HttpResponseMessage Users()
         {
             try
@@ -27,6 +31,7 @@ namespace iTechArt.Survey.WebApi.Controllers
                 {
                     return response;
                 }
+
                 throw new HttpResponseException(HttpStatusCode.NoContent);
             }
             catch (HttpResponseException exception)
@@ -34,17 +39,39 @@ namespace iTechArt.Survey.WebApi.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.NoContent, exception);
             }
         }
+    }
+
+}
+namespace iTechArt.Survey.WebApi.v2.Controllers { 
+[ApiVersion("2")]
+    [RoutePrefix("api/v{version:ApiVersion}/User")]
+    public class UserController : ApiController
+    {
+        private readonly IUserService _userService;
 
 
-        public HttpResponseMessage Exception()
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
+
+        [HttpGet]
+        [Route("Users")]
+        public HttpResponseMessage Users()
         {
             try
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                var response = Request.CreateResponse(HttpStatusCode.OK);
+                if (response != null)
+                {
+                    return response;
+                }
+                throw new HttpResponseException(HttpStatusCode.NoContent);
             }
             catch (HttpResponseException exception)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, exception);
+                return Request.CreateErrorResponse(HttpStatusCode.NoContent, exception);
             }
         }
     }

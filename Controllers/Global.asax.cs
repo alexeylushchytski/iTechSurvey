@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Routing;
-using iTechArt.Survey.WebApi;
+﻿using System.Web.Http;
 
-namespace Controllers
+namespace iTechArt.Survey.WebApi
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

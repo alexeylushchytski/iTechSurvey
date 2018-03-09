@@ -37,6 +37,9 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.13\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\structuremap.3.0.0.108\lib\net40\StructureMap.dll</HintPath>
     </Reference>
@@ -91,6 +94,10 @@
       <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
       <Name>iTechart.Survey.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Common\iTechArt.Common.csproj">
+      <Project>{7377322c-a1d5-430f-9621-8ea655fe6f1e}</Project>
+      <Name>iTechArt.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\iTechArt.Repositories.EntityFramework\iTechArt.Repositories.EntityFramework.csproj">
       <Project>{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}</Project>
       <Name>iTechArt.Repositories.EntityFramework</Name>
@@ -98,6 +105,10 @@
     <ProjectReference Include="..\iTechArt.Repositories\iTechArt.Repositories.csproj">
       <Project>{1E76A240-115A-4A1E-A2C5-A782B697CF7B}</Project>
       <Name>iTechArt.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Survey.BLL.DTO\iTechArt.Survey.BLL.DTO.csproj">
+      <Project>{917e1ede-7fda-435a-96c8-683e07f720fc}</Project>
+      <Name>iTechArt.Survey.BLL.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>

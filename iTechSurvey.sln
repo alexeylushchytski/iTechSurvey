@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Repositories", "iT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Repositories.EntityFramework", "iTechArt.Repositories.EntityFramework\iTechArt.Repositories.EntityFramework.csproj", "{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt.Common", "iTechArt.Common\iTechArt.Common.csproj", "{7377322C-A1D5-430F-9621-8EA655FE6F1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A54BB14E-0534-47D3-BF55-7E5BCA1852BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7377322C-A1D5-430F-9621-8EA655FE6F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7377322C-A1D5-430F-9621-8EA655FE6F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7377322C-A1D5-430F-9621-8EA655FE6F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7377322C-A1D5-430F-9621-8EA655FE6F1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

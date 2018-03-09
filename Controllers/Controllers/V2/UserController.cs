@@ -35,7 +35,6 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
                     _logger.Log(LogLevel.Info, response);
                     return response;
                 }
-
                 throw new HttpResponseException(HttpStatusCode.NoContent);
             }
             catch (HttpResponseException exception)

@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using iTechArt.Survey.BLL.Interfaces;
 using Microsoft.Web.Http;
@@ -21,11 +22,11 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
 
         [HttpGet]
         [Route("Users")]
-        public HttpResponseMessage Users()
+        public async Task<HttpResponseMessage> Users()
         {
             try
             {
-                var response = Request.CreateResponse(HttpStatusCode.OK, _userService.GetUsers());
+                var response = Request.CreateResponse(HttpStatusCode.OK, await _userService.GetUsers());
                 if (response != null)
                 {
                     return response;

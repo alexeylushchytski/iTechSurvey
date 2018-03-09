@@ -6,6 +6,6 @@ namespace iTechArt.Survey.BLL.Interfaces
 {
     public interface IUserService
     {
-        IReadOnlyCollection<User> GetUsers();
+        Task<IReadOnlyCollection<User>> GetUsers();
     }
 }

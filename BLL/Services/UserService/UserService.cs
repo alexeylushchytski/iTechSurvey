@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using iTechart.Survey.DAL.Interfaces;
 using iTechArt.Survey.BLL.Interfaces;
 using iTechArt.Survey.DomainModel;
@@ -17,9 +18,9 @@ namespace iTechArt.Survey.BLL.Services.UserService
         }
 
 
-        public IReadOnlyCollection<User> GetUsers()
+        public async Task<IReadOnlyCollection<User>> GetUsers()
         {
-            return _unitOfWork.GetRepository<User>().Entities;
+            return await _unitOfWork.GetRepository<User>().GetAllAsync();
         }
     }
 }

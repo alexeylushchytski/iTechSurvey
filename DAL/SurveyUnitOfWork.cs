@@ -20,7 +20,7 @@ namespace iTechart.Survey.DAL
 
         public override IRepository<T> GetRepository<T>()
         {
-            return new Repository<T>(_dbContext);
+            return Repository<T>.Instance ?? new Repository<T>(_dbContext);
         }
 
 

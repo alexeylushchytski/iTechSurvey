@@ -13,12 +13,18 @@ namespace iTechArt.Repositories.EntityFramework.Repository
     {
         private readonly IDbContext _dbContext;
 
+        public static Repository<T> Instance;
+
         private IDbSet<T> TableDbSet => _dbContext.Set<T>();
 
 
         public Repository(IDbContext dbContext)
         {
             _dbContext = dbContext;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
         }
 
 

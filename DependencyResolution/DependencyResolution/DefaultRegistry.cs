@@ -40,7 +40,7 @@ namespace DependencyResolution.DependencyResolution
                     scan.WithDefaultConventions();
                 });
             For<IRepository<User>>().Use<Repository<User>>();
-            For<IDbContext>().Use<SurveyContext>();
+            For<IDbContext>().Use<SurveyContext>().AlwaysUnique();
             For<IUserService>().Use<UserService>();
             For<ISurveyUnitOfWork>().Use<SurveyUnitOfWork>();
         }

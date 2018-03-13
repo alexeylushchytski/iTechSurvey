@@ -3,7 +3,7 @@ using Microsoft.Web.Http;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using NLog;
+using iTechArt.Common.Logger.LoggerContext;
 
 namespace iTechArt.Survey.WebApi.Controllers.V1
 {
@@ -13,12 +13,10 @@ namespace iTechArt.Survey.WebApi.Controllers.V1
     {
         private readonly IUserService _userService;
 
-        private readonly ILoggerBase _logger;
 
-        public UserController(IUserService userService, ILoggerBase logger)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _logger = logger;
         }
 
 
@@ -28,12 +26,11 @@ namespace iTechArt.Survey.WebApi.Controllers.V1
         {
             try
             {
-
-                _logger.Log(LogLevel.Info, Request);
+                LoggerContext.Current.Log(Request);
                 var response = Request.CreateResponse(HttpStatusCode.OK);
                 if (response != null)
                 {
-                    _logger.Log(LogLevel.Info, response);
+                    LoggerContext.Current.Log(response);
                     return response;
                 }
 
@@ -41,7 +38,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V1
             }
             catch (HttpResponseException exception)
             {
-                _logger.Log(LogLevel.Error, exception);
+                LoggerContext.Current.LogError(exception);
                 return Request.CreateErrorResponse(HttpStatusCode.NoContent, exception);
             }
         }

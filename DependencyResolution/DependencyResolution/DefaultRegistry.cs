@@ -26,7 +26,6 @@ using iTechArt.Survey.BLL.Services.UserService;
 
 namespace DependencyResolution.DependencyResolution
 {
-    using iTechArt.Common.Helpers.Logger;
     using iTechArt.Survey.DomainModel;
     using NLog;
     using StructureMap.Configuration.DSL;
@@ -45,7 +44,6 @@ namespace DependencyResolution.DependencyResolution
             For<IDbContext>().Use<SurveyContext>().AlwaysUnique();
             For<IUserService>().Use<UserService>();
             For<ISurveyUnitOfWork>().Use<SurveyUnitOfWork>();
-            For<ILoggerBase>().Use<NLogger>();
         }
         #endregion
     }

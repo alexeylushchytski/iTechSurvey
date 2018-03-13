@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using iTechArt.Common.Logger.LoggerContext;
 using iTechArt.Survey.BLL.Interfaces;
 using Microsoft.Web.Http;
-using NLog;
 
 namespace iTechArt.Survey.WebApi.Controllers.V2
 {
@@ -13,12 +13,11 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
     public class UserController : ApiController
     {
         private readonly IUserService _userService;
-        private readonly ILoggerBase _logger;
 
-        public UserController(IUserService userService, ILoggerBase logger)
+
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _logger = logger;
         }
 
 
@@ -28,18 +27,18 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
         {
             try
             {
-                _logger.Log(LogLevel.Info, Request);
+                LoggerContext.Current.Log(Request);
                 var response = Request.CreateResponse(HttpStatusCode.OK, await _userService.GetUsers());
                 if (response != null)
                 {
-                    _logger.Log(LogLevel.Info, response);
+                    LoggerContext.Current.Log(response);
                     return response;
                 }
                 throw new HttpResponseException(HttpStatusCode.NoContent);
             }
             catch (HttpResponseException exception)
             {
-                _logger.Log(LogLevel.Error, exception);
+                LoggerContext.Current.LogError(exception);
                 return Request.CreateErrorResponse(HttpStatusCode.NoContent, exception);
             }
         }

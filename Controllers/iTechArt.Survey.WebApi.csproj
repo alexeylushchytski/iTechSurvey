@@ -114,6 +114,14 @@
       <Project>{bb4a104a-22a4-483a-8fbb-111b2ec3f056}</Project>
       <Name>iTechArt.Survey.DependencyResolution</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Common.Logger\iTechArt.Common.Logger.csproj">
+      <Project>{b3139ee6-e83d-40a7-b9f5-186fedf64b44}</Project>
+      <Name>iTechArt.Common.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Common\iTechArt.Common.csproj">
+      <Project>{7377322C-A1D5-430F-9621-8EA655FE6F1E}</Project>
+      <Name>iTechArt.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702C7140-C7A4-40AA-B035-04F3C4D82ADD}</Project>
       <Name>iTechArt.Survey.DomainModel</Name>

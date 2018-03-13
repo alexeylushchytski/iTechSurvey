@@ -1,5 +1,4 @@
-﻿using NLog;
-using ILogger = iTechArt.Common.Helpers.Interfaces.ILogger;
+﻿using ILogger = iTechArt.Common.Helpers.Interfaces.ILogger;
 
 namespace iTechArt.Common.Logger.LoggerContext
 {

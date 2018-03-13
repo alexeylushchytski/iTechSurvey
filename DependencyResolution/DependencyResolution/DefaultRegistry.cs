@@ -27,7 +27,6 @@ using iTechArt.Survey.BLL.Services.UserService;
 namespace DependencyResolution.DependencyResolution
 {
     using iTechArt.Survey.DomainModel;
-    using NLog;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
 

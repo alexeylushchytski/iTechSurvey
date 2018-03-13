@@ -28,6 +28,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V1
         {
             try
             {
+
                 _logger.Log(LogLevel.Info, Request);
                 var response = Request.CreateResponse(HttpStatusCode.OK);
                 if (response != null)

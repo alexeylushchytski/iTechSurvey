@@ -7,9 +7,6 @@ namespace iTechArt.Repositories.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        IReadOnlyCollection<T> Entities { get; }
-
-
         void Remove(T entity);
 
 

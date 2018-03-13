@@ -12,7 +12,7 @@ namespace iTechart.Survey.DAL
         private readonly IDbContext _dbContext;
 
 
-        public SurveyUnitOfWork(IDbContext dbContext)
+        public SurveyUnitOfWork(IDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

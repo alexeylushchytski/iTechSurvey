@@ -6,12 +6,14 @@ namespace iTechart.Survey.DAL.Context
 {
     public sealed class SurveyContext : DbContext, IDbContext
     {
-        public SurveyContext() : base("DefaultString") { }
+        public SurveyContext() : base("DefaultString")
+        {
+            Configuration.LazyLoadingEnabled = false;
+        }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            this.Configuration.LazyLoadingEnabled = false;
             modelBuilder.Configurations.Add(new UserEntityConfiguration());
         }
 

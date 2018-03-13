@@ -10,13 +10,10 @@ namespace iTechArt.Repositories.EntityFramework.UnitOfWork
         private readonly IDbContext _dbContext;
 
 
-        public UnitOfWork(IDbContext dbConnection)
+        public UnitOfWork(IDbContext dbContext)
         {
-            _dbContext = dbConnection;
+            _dbContext = dbContext;
         }
-
-
-        public UnitOfWork() { }
 
 
         public virtual async Task<int>  CommitAsync()
@@ -27,7 +24,7 @@ namespace iTechArt.Repositories.EntityFramework.UnitOfWork
 
         public void Dispose()
         {
-            this._dbContext.Dispose();
+            _dbContext.Dispose();
         }
 
 

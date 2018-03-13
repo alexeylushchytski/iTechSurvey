@@ -28,8 +28,6 @@ namespace iTechArt.Repositories.EntityFramework.Repository
         }
 
 
-        public IReadOnlyCollection<T> Entities => TableDbSet.ToList();
-
 
         public void Remove(T entity)
         {

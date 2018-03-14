@@ -20,7 +20,7 @@ namespace iTechart.Survey.DAL.Context
 
         IDbSet<TEntity> IDbContext.Set<TEntity>()
         {
-            return this.Set<TEntity>();
+            return Set<TEntity>();
         }
     }
 }

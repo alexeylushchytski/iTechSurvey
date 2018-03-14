@@ -1,11 +1,15 @@
-﻿namespace iTechArt.Common.Helpers.Interfaces
+﻿using System;
+
+namespace iTechArt.Common.Helpers.Interfaces
 {
     public interface ILogger
     {
-        void Log(object objectToLog);
+        void Log(string objectToLog);
 
-        void LogWarning(object objectToLog);
 
-        void LogError(object objectToLog);
+        void LogWarning(string objectToLog);
+
+
+        void LogError(Exception objectToLog);
     }
 }

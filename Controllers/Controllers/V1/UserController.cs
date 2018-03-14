@@ -26,11 +26,11 @@ namespace iTechArt.Survey.WebApi.Controllers.V1
         {
             try
             {
-                LoggerContext.Current.Log(Request);
+                LoggerContext.Current.Log(Request.ToString());
                 var response = Request.CreateResponse(HttpStatusCode.OK);
                 if (response != null)
                 {
-                    LoggerContext.Current.Log(response);
+                    LoggerContext.Current.Log(response.ToString());
                     return response;
                 }
 

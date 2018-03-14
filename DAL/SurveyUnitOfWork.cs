@@ -1,5 +1,4 @@
 ﻿using iTechArt.Repositories.EntityFramework.Interfaces;
-using System.Threading.Tasks;
 using iTechart.Survey.DAL.Interfaces;
 using iTechArt.Repositories.EntityFramework.UnitOfWork;
 

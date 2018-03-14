@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using System;
+using NLog;
 using ILogger = iTechArt.Common.Helpers.Interfaces.ILogger;
 
 namespace iTechArt.Common.Logger.NLogger
@@ -8,19 +9,19 @@ namespace iTechArt.Common.Logger.NLogger
         private readonly NLog.ILogger _logger = LogManager.GetCurrentClassLogger();
 
 
-        public void Log(object objectToLog)
+        public void Log(string objectToLog)
         {
             _logger.Log(LogLevel.Info, objectToLog);
         }
 
 
-        public void LogError(object objectToLog)
+        public void LogError(Exception objectToLog)
         {
             _logger.Log(LogLevel.Error, objectToLog);
         }
 
 
-        public void LogWarning(object objectToLog)
+        public void LogWarning(string objectToLog)
         {
             _logger.Log(LogLevel.Warn, objectToLog);
         }

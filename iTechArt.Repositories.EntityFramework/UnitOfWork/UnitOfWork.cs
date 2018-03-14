@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using iTechArt.Repositories.EntityFramework.Interfaces;
 using iTechArt.Repositories.EntityFramework.Repository;
 using iTechArt.Repositories.Interfaces;
@@ -10,9 +12,13 @@ namespace iTechArt.Repositories.EntityFramework.UnitOfWork
         private readonly IDbContext _dbContext;
 
 
+        private readonly Dictionary<Type, object> _repositories;
+
+
         public UnitOfWork(IDbContext dbContext)
         {
             _dbContext = dbContext;
+            _repositories = new Dictionary<Type, object>();
         }
 
 
@@ -30,7 +36,14 @@ namespace iTechArt.Repositories.EntityFramework.UnitOfWork
 
         public virtual IRepository<T> GetRepository<T>() where T : class
         {
-            return new Repository<T>(_dbContext);
+            object repository;
+            if (_repositories.TryGetValue(typeof(T), out repository))
+            {
+                return (IRepository<T>)repository;
+            }
+            var repositore = new Repository<T>(_dbContext);
+            _repositories.Add(typeof(T), repositore);
+            return repositore;
         }
     }
 }

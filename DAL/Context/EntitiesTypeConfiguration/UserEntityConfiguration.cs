@@ -7,11 +7,11 @@ namespace iTechart.Survey.DAL.Context.EntitiesTypeConfiguration
     {
         internal UserEntityConfiguration()
         {
-            this.ToTable("Users");
-            this.HasKey(x => x.Id);
-            this.Property(x => x.Name).HasColumnName("Name").IsRequired().HasMaxLength(255);
-            this.Property(x => x.Email).IsRequired().HasColumnName("Email");
-            this.Property(x => x.Password).IsRequired();
+            ToTable("Users");
+            HasKey(x => x.Id);
+            Property(x => x.Name).HasColumnName("Name").IsRequired().HasMaxLength(255);
+            Property(x => x.Email).IsRequired().HasColumnName("Email");
+            Property(x => x.Password).IsRequired();
         }
     }
 }

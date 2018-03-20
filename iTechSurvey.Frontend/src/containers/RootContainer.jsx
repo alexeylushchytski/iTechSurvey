@@ -1,15 +1,17 @@
-import React, { Component } from "react";
-import { Route } from 'react-router-dom'
+import React from 'react';
 import { hot } from 'react-hot-loader';
+import { Route, Switch } from 'react-router'
+import Routes from '../routes/routes.js';
 import Footer from '../layout/components/footer/footer.jsx';
-import HeaderContainer from '../layout/containers/index';
+import Header from '../layout/components/header/header.jsx';
 
 const RootContainer = () => (
     <div>
-        <Route exact path="/public" component={HeaderContainer} />
-        <Route exact path="/public" component={Footer} />
-        <Route exact path="/login" component={HeaderContainer} />
-        <Route path="/login" component={Footer} />
+        <Header />
+        <Switch>
+            {Routes}
+        </Switch>
+        <Footer />
     </div>
 );
 

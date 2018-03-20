@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Header from '../components/header/header.jsx';
-import { userLogIn } from '../actions/layoutActions.js';
+import { loginLinkClick } from '../actions/layoutActions';
 
 function mapStateToProps(state) {
     return {
@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        userLogIn: bindActionCreators(userLogIn, dispatch),
+        onLogInClick: bindActionCreators(loginLinkClick, dispatch),
     };
 }
 

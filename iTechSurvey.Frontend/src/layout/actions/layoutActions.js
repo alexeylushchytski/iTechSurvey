@@ -1,8 +1,8 @@
-import { USER_LOGIN } from '../constants/actionTypes';
+import { LOGINLINK_CLICK } from '../constants/actionTypes';
 
-export const userLogIn = () => {
+export const loginLinkClick = () => {
     return {
-        type: USER_LOGIN,
+        type: LOGINLINK_CLICK,
         payload: {}
     }
 }

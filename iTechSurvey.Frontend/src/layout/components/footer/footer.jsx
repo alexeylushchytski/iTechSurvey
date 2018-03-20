@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
   render() {
     var year = new Date().getFullYear();
     return (
-      <div id="footer">
+      <div id="footer" className="footer">
         <p>Copyright © {year} iTechArt</p>
       </div>
     );

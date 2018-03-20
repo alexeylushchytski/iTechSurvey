@@ -1,1 +1,5 @@
-export const USER_LOGIN = 'USER_LOGIN';
+const LOGINLINK_CLICK = 'LOGINLINK_CLICK';
+
+export {
+    LOGINLINK_CLICK
+}

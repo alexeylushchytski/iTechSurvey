@@ -5,23 +5,21 @@ import { envelope } from '../../../../images/envelope.png';
 
 const About = () => {
   return (
-    <div>
-      <a id="react-a-about-link" href="https://www.itechart.by/about">Company</a>
-    </div>
+    <a className="header__about-link" href="https://www.itechart.by/about">Company</a>
   )
 }
 
 
 const EnvelopePicture = () => {
   return (
-    <img id="react-img-envelope" src="/images/envelope.png" />
+    <img className="header__envelope-picture" src="/images/envelope.png" />
   )
 }
 
 
-const LoginLink = (onClick) => {
+const LoginLink = ({ onClick }) => {
   return (
-    <Link to="/login" id="react-a-login-link" onClick={() => { onClick() }}>Login</Link>
+    <Link to="/login" className="header__login-link" onClick={onClick}>Login</Link>
   )
 }
 
@@ -29,24 +27,21 @@ const LoginLink = (onClick) => {
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { loginLinkAvailable: true };
   }
-  componentDidMount() {
-
-  };
 
   isAvailable() {
-    const loginLink = LoginLink(this.props.userLogIn);
-    if (!this.props.loginLinkisHide) {
+    if (this.state.loginLinkAvailable) {
       return (
-        <div id="header">
+        <div id="header" className="header">
           <EnvelopePicture />
-          {loginLink}
+          <LoginLink onClick={() => { this.setState({ loginLinkAvailable: false }) }} />
           <About />
         </div>
       )
     }
     else return (
-      <div id="header">
+      <div id="header" className="header">
         <EnvelopePicture />
         <About />
       </div>

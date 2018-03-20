@@ -1,5 +1,0 @@
-const LOGINLINK_CLICK = 'LOGINLINK_CLICK';
-
-export {
-    LOGINLINK_CLICK
-}

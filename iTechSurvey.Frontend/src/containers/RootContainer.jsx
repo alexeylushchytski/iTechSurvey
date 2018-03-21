@@ -4,12 +4,13 @@ import { Route, Switch } from "react-router";
 import Routes from "../routes/routes.js";
 import Footer from "../layout/components/footer/footer.jsx";
 import Header from "../layout/components/header/header.jsx";
+import LoginPage from "../login/containers/loginContainer";
 
 const RootContainer = () => (
   <div>
     <Header />
     <Switch>
-      <Route path={Routes.Login.path} component={Header} />
+      <Route path={Routes.Login.path} component={LoginPage} />
     </Switch>
     <Footer />
   </div>

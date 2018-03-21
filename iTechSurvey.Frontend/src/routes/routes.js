@@ -12,6 +12,10 @@ const Routes = {
   Home: {
     path: "/public",
     title: "Home"
+  },
+  SignUp: {
+    path: "/signup",
+    title: "SignUp"
   }
 };
 

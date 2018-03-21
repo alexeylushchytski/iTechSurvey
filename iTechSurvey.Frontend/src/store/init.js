@@ -3,7 +3,8 @@ import $ from "jquery";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createHistory from "history/createBrowserHistory";
 import { connectRouter, routerMiddleware } from "connected-react-router";
-import reducers from "../layout/reducers/index";
+import ReduxThunk from "redux-thunk";
+import reducers from "../rootreducer/index";
 
 const initialState = {};
 const history = createHistory();
@@ -16,8 +17,8 @@ const configureStore = initState => {
     connectRouter(history)(reducers),
     initState,
     compose(
-      window.devToolsExtension ? window.devToolsExtension() : f => f,
-      applyMiddleware(routerMiddleware(history))
+      applyMiddleware(ReduxThunk, routerMiddleware(history)),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   );
   return store;

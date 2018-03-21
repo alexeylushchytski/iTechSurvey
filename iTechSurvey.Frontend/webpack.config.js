@@ -17,7 +17,9 @@ var config = {
   },
   devServer: {
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: {
+      index: "public/index.html"
+    }
   },
   devtool: "#eval-source-map",
   module: {

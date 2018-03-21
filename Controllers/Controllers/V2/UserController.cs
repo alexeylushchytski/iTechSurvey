@@ -2,12 +2,14 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using iTechArt.Common.Logger.LoggerContext;
 using iTechArt.Survey.BLL.Interfaces;
 using Microsoft.Web.Http;
 
 namespace iTechArt.Survey.WebApi.Controllers.V2
 {
+    [EnableCors("*", "*", "*")]
     [ApiVersion("2")]
     [RoutePrefix("api/v{version:ApiVersion}/User")]
     public class UserController : ApiController

@@ -5,7 +5,8 @@ import { Router } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import configureStore from "./store/init";
 import RootContainer from "./containers/RootContainer.jsx";
-import { store, history } from "./store/init";
+import { store } from "./store/init";
+import history from "./helpers/history";
 
 const rootNode = document.getElementById("container");
 

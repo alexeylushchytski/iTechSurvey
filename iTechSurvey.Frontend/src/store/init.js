@@ -1,13 +1,13 @@
 import { createStore, compose, applyMiddleware, combineReducers } from "redux";
 import $ from "jquery";
 import { composeWithDevTools } from "redux-devtools-extension";
-import createHistory from "history/createBrowserHistory";
 import { connectRouter, routerMiddleware } from "connected-react-router";
 import ReduxThunk from "redux-thunk";
 import reducers from "../rootreducer/index";
+import history from "../helpers/history";
 
 const initialState = {};
-const history = createHistory();
+
 
 const configureStore = initState => {
   const composeEnhancers =
@@ -26,4 +26,4 @@ const configureStore = initState => {
 
 const store = configureStore(initialState);
 
-export { store, history };
+export { store };

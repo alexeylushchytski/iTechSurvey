@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\V2\AuthController.cs" />
     <Compile Include="Controllers\V2\UserController.cs" />
     <Compile Include="Controllers\V1\UserController.cs" />
     <Compile Include="Global.asax.cs">

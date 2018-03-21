@@ -9,7 +9,6 @@ using Microsoft.Web.Http;
 
 namespace iTechArt.Survey.WebApi.Controllers.V2
 {
-    [EnableCors("*", "*", "*")]
     [ApiVersion("2")]
     [RoutePrefix("api/v{version:ApiVersion}/User")]
     public class UserController : ApiController

@@ -34,14 +34,20 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAuthService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthService\AuthService.cs" />
     <Compile Include="Services\UserService\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\iTechart.Survey.DAL.csproj">
       <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
       <Name>iTechart.Survey.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Common\iTechArt.Common.csproj">
+      <Project>{7377322C-A1D5-430F-9621-8EA655FE6F1E}</Project>
+      <Name>iTechArt.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\iTechArt.Repositories\iTechArt.Repositories.csproj">
       <Project>{1E76A240-115A-4A1E-A2C5-A782B697CF7B}</Project>
@@ -51,9 +57,6 @@
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
       <Name>iTechArt.Survey.DomainModel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,6 +22,7 @@ using iTechArt.Repositories.EntityFramework.Interfaces;
 using iTechArt.Repositories.EntityFramework.Repository;
 using iTechArt.Repositories.Interfaces;
 using iTechArt.Survey.BLL.Interfaces;
+using iTechArt.Survey.BLL.Services.AuthService;
 using iTechArt.Survey.BLL.Services.UserService;
 
 namespace DependencyResolution.DependencyResolution
@@ -43,6 +44,7 @@ namespace DependencyResolution.DependencyResolution
             For<IDbContext>().Use<SurveyContext>().AlwaysUnique();
             For<IUserService>().Use<UserService>();
             For<ISurveyUnitOfWork>().Use<SurveyUnitOfWork>();
+            For<IAuthService>().Use<AuthService>();
         }
         #endregion
     }

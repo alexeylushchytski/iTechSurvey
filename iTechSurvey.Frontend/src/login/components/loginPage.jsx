@@ -1,16 +1,69 @@
 import React from "react";
 import { render } from "react-dom";
 
+const FormErrors = ({ formErrors }) => (
+  <div className="formErrors">
+    {Object.keys(formErrors).map((fieldName, i) => {
+      if (formErrors[fieldName].length > 0) {
+        return (
+          <p key={i}>
+            {fieldName} {formErrors[fieldName]}
+          </p>
+        );
+      } else {
+        return "";
+      }
+    })}
+  </div>
+);
+
 export default class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      formErrors: { email: "", password: "" },
+      emailValid: false,
+      passwordValid: false,
+      formValid: false
     };
 
     this.onChange = this.onChange.bind(this);
     this.handleSumbit = this.handleSumbit.bind(this);
+  }
+
+  validateField(fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let emailValid = this.state.emailValid;
+    let passwordValid = this.state.passwordValid;
+
+    switch (fieldName) {
+      case "email":
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.email = emailValid ? "" : " is invalid";
+        break;
+      case "password":
+        passwordValid = value.length >= 6;
+        fieldValidationErrors.password = passwordValid ? "" : " is too short";
+        break;
+      default:
+        break;
+    }
+    this.setState(
+      {
+        formErrors: fieldValidationErrors,
+        emailValid: emailValid,
+        passwordValid: passwordValid
+      },
+      this.validateForm
+    );
+  }
+
+  validateForm() {
+    this.setState({
+      formValid: this.state.emailValid && this.state.passwordValid
+    });
   }
 
   handleSumbit(e) {
@@ -20,17 +73,19 @@ export default class LoginPage extends React.Component {
 
   onChange(e) {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, () => {
+      this.validateField(name, value);
+    });
   }
 
   render() {
     const { email, password } = this.state;
     return (
       <div>
-        <form
-          className="login-form group-form"
-          onSubmit={this.handleSumbit}
-        >
+        <div className="panel panel-default">
+          <FormErrors formErrors={this.state.formErrors} />
+        </div>
+        <form className="login-form group-form" onSubmit={this.handleSumbit}>
           <div className="login-form__user-email">
             <label htmlFor="email">Email</label>
             <input
@@ -56,6 +111,7 @@ export default class LoginPage extends React.Component {
             name="submit"
             value="Login"
             className="login-form__input-submit btn btn-primary"
+            disabled={!this.state.formValid}
           />
         </form>
       </div>

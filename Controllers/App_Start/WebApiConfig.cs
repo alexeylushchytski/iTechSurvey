@@ -1,7 +1,10 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Linq;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Routing;
 using Microsoft.Web.Http.Routing;
+using Newtonsoft.Json.Serialization;
 
 namespace iTechArt.Survey.WebApi
 {
@@ -28,6 +31,9 @@ namespace iTechArt.Survey.WebApi
                 routeTemplate: "api/v{version:apiVersion}/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }

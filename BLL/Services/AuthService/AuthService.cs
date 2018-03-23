@@ -9,22 +9,22 @@ namespace iTechArt.Survey.BLL.Services.AuthService
     public sealed class AuthService : IAuthService
     {
         private readonly ISurveyUnitOfWork _unitOfWork;
-
+        
 
         public AuthService(ISurveyUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<string> Login(LoginUserViewModel user)
+        public async Task<bool> ValidateUser(LoginUserViewModel user)
         {
             User tempUser = await _unitOfWork.GetRepository<User>().GetByAsync(x => user.Email == x.Email);
-            if (tempUser == null)
+            if (tempUser != null)
             {
-                return null;
+                return true;
             }
 
-            return null;
+            return false;
         }
     }
 }

@@ -5,6 +5,6 @@ namespace iTechArt.Survey.BLL.Interfaces
 {
     public interface IAuthService
     {
-        Task<string> Login(LoginUserViewModel user);
+        Task<bool> ValidateUser(LoginUserViewModel user);
     }
 }

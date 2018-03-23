@@ -15,7 +15,7 @@ namespace iTechArt.Survey.WebApi
             config.EnableCors();
             config.Filters.Add(new AuthorizeAttribute());
             // Web API configuration and services
-             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             // Web API routes
             var constraintResolver = new DefaultInlineConstraintResolver()
             {

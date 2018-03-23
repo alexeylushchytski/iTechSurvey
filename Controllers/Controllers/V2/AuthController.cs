@@ -1,8 +1,10 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.ModelBinding;
 using iTechArt.Common.Logger.LoggerContext;
 using iTechArt.Survey.BLL.DTO.ViewModels;
 using iTechArt.Survey.BLL.Interfaces;
@@ -24,7 +26,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
 
         [HttpPost]
         [Route("Login")]
-        [AllowAnonymous]
+        [Authorize]
         public async Task<HttpResponseMessage> Login(LoginUserViewModel user)
         {
             LoggerContext.Current.Log(Request.ToString());
@@ -32,7 +34,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
             {
                 if (ModelState.IsValid)
                 {
-                    var response = Request.CreateResponse(HttpStatusCode.OK, await _authService.Login(user));
+                    var response = Request.CreateResponse(HttpStatusCode.OK, await _authService.ValidateUser(user));
                     return response;
                 }
 

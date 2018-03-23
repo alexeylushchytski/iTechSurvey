@@ -53,6 +53,10 @@
       <Project>{1E76A240-115A-4A1E-A2C5-A782B697CF7B}</Project>
       <Name>iTechArt.Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Survey.BLL.DTO\iTechArt.Survey.BLL.DTO.csproj">
+      <Project>{917E1EDE-7FDA-435A-96C8-683E07F720FC}</Project>
+      <Name>iTechArt.Survey.BLL.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702c7140-c7a4-40aa-b035-04f3c4d82add}</Project>
       <Name>iTechArt.Survey.DomainModel</Name>

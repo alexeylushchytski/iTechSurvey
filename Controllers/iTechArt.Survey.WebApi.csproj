@@ -129,6 +129,10 @@
       <Project>{7377322C-A1D5-430F-9621-8EA655FE6F1E}</Project>
       <Name>iTechArt.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iTechArt.Survey.BLL.DTO\iTechArt.Survey.BLL.DTO.csproj">
+      <Project>{917E1EDE-7FDA-435A-96C8-683E07F720FC}</Project>
+      <Name>iTechArt.Survey.BLL.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
       <Project>{702C7140-C7A4-40AA-B035-04F3C4D82ADD}</Project>
       <Name>iTechArt.Survey.DomainModel</Name>

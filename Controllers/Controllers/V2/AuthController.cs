@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using iTechArt.Common.Logger.LoggerContext;
+using iTechArt.Survey.BLL.DTO.ViewModels;
 using iTechArt.Survey.BLL.Interfaces;
-using iTechArt.Survey.DomainModel;
 using Microsoft.Web.Http;
 
 namespace iTechArt.Survey.WebApi.Controllers.V2
@@ -25,7 +25,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
         [HttpPost]
         [Route("Login")]
         [AllowAnonymous]
-        public async Task<HttpResponseMessage> Login(User user)
+        public async Task<HttpResponseMessage> Login(LoginUserViewModel user)
         {
             LoggerContext.Current.Log(Request.ToString());
             try

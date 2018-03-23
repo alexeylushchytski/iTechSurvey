@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using iTechart.Survey.DAL.Interfaces;
+using iTechArt.Survey.BLL.DTO.ViewModels;
 using iTechArt.Survey.BLL.Interfaces;
 using iTechArt.Survey.DomainModel;
 
@@ -15,7 +16,7 @@ namespace iTechArt.Survey.BLL.Services.AuthService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<string> Login(User user)
+        public async Task<string> Login(LoginUserViewModel user)
         {
             User tempUser = await _unitOfWork.GetRepository<User>().GetByAsync(x => user.Email == x.Email);
             if (tempUser == null)

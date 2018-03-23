@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using iTechArt.Survey.DomainModel;
+using iTechArt.Survey.BLL.DTO.ViewModels;
 
 namespace iTechArt.Survey.BLL.Interfaces
 {
     public interface IAuthService
     {
-        Task<string> Login(User user);
+        Task<string> Login(LoginUserViewModel user);
     }
 }

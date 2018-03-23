@@ -20,7 +20,7 @@ namespace DependencyResolution.DependencyResolution {
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-
+    using Microsoft.Owin;
     using Microsoft.Practices.ServiceLocation;
     using StructureMap;
 	
@@ -31,6 +31,7 @@ namespace DependencyResolution.DependencyResolution {
         #region Constants and Fields
 
         private const string NestedContainerKey = "Nested.Container.Key";
+        private OwinContext OwinContext;
 
         #endregion
 
@@ -41,6 +42,7 @@ namespace DependencyResolution.DependencyResolution {
                 throw new ArgumentNullException("container");
             }
             Container = container;
+            OwinContext = new OwinContext();
         }
 
         #endregion
@@ -50,11 +52,15 @@ namespace DependencyResolution.DependencyResolution {
         public IContainer Container { get; set; }
 
         public IContainer CurrentNestedContainer {
-            get {
-                return (IContainer)HttpContext.Items[NestedContainerKey];
+            get
+            {
+                if (OwinContext == null) //OwinContext is passed in the ctor
+                    return null;
+                return OwinContext.Get<IContainer>(NestedContainerKey);
             }
-            set {
-                HttpContext.Items[NestedContainerKey] = value;
+            set
+            {
+                OwinContext.Set<IContainer>(NestedContainerKey, value);
             }
         }
 

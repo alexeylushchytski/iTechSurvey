@@ -1,12 +1,12 @@
-﻿using System.Web.Http;
+﻿//using System.Web.Http;
 
-namespace iTechArt.Survey.WebApi
-{
-    public class WebApiApplication : System.Web.HttpApplication
-    {
-        protected void Application_Start()
-        {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-        }
-    }
-}
+//namespace iTechArt.Survey.WebApi
+//{
+//    public class WebApiApplication : System.Web.HttpApplication
+//    {
+//        protected void Application_Start()
+//        {
+//            GlobalConfiguration.Configure(WebApiConfig.Register);
+//        }
+//    }
+//}

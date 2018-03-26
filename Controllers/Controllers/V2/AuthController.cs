@@ -19,32 +19,10 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
     {
         private readonly IAuthService _authService;
 
+
         public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
-
-        [HttpPost]
-        [Route("Login")]
-        [Authorize]
-        public async Task<HttpResponseMessage> Login(LoginUserViewModel user)
-        {
-            LoggerContext.Current.Log(Request.ToString());
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    var response = Request.CreateResponse(HttpStatusCode.OK, await _authService.ValidateUser(user));
-                    return response;
-                }
-
-                return new HttpResponseMessage(HttpStatusCode.Accepted);
-            }
-            catch (HttpResponseException ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.Forbidden);
-            }
-        }
-
     }
 }

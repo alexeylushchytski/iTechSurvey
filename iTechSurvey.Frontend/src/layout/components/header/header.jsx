@@ -21,7 +21,18 @@ const EnvelopePicture = () => {
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loginLinkAvailable: true };
+    this.state = {
+      loginLinkAvailable: true,
+      UserName: ""
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.state.User.email !== undefined) {
+      this.setState({
+        UserName: nextProps.state.User.email
+      });
+    }
   }
 
   renderHeader() {
@@ -45,7 +56,9 @@ export default class Header extends React.Component {
       return (
         <div id="header" className="header">
           <EnvelopePicture />
+          <strong className="header__userName">{this.state.UserName}</strong>
           <About />
+          
         </div>
       );
   }

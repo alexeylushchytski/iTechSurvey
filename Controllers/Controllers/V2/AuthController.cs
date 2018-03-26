@@ -1,14 +1,13 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using System.Web.ModelBinding;
 using iTechArt.Common.Logger.LoggerContext;
 using iTechArt.Survey.BLL.DTO.ViewModels;
 using iTechArt.Survey.BLL.Interfaces;
 using Microsoft.Web.Http;
+using Newtonsoft.Json;
 
 namespace iTechArt.Survey.WebApi.Controllers.V2
 {
@@ -23,6 +22,27 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
         public AuthController(IAuthService authService)
         {
             _authService = authService;
+        }
+
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("Signup")]
+        public async Task<HttpResponseMessage> Register(RegisterUserViewModel user)
+        {
+            LoggerContext.Current.Log(Request.ToString());
+            if (ModelState.IsValid)
+            {
+                if (await _authService.UserExist(user.Email))
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Email already exists!");
+                }
+
+                await _authService.CreateUserAsync(user);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            
+            return Request.CreateResponse(HttpStatusCode.BadRequest, JsonConvert.SerializeObject(ModelState));
         }
     }
 }

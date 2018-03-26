@@ -16,15 +16,31 @@ namespace iTechArt.Survey.BLL.Services.AuthService
             _unitOfWork = unitOfWork;
         }
 
+
         public async Task<bool> ValidateUser(string email, string password)
         {
             User tempUser = await _unitOfWork.GetRepository<User>().GetByAsync(x => x.Email == email && x.Password == password);
+            return tempUser != null;
+        }
+
+
+        public async Task<bool> UserExist(string email)
+        {
+            User tempUser = await _unitOfWork.GetRepository<User>().GetByAsync(x => x.Email == email);
             if (tempUser != null)
             {
                 return true;
             }
 
             return false;
+        }
+
+
+        public async Task<int> CreateUserAsync(RegisterUserViewModel user)
+        {
+            var tempUser = new User(user.Name, user.Email, user.Password);
+            _unitOfWork.GetRepository<User>().Add(tempUser);
+            return await _unitOfWork.CommitAsync();
         }
     }
 }

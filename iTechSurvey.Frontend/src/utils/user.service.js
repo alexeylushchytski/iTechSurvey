@@ -9,16 +9,14 @@ export function login(email, password) {
         "Content-Type": "application/x-www-form-urlencoded"
       }
     })
-    .then(function(response) {
-      if (response.status === 200) {
-        sessionStorage.setItem("token", response.data.access_token);
+    .then(
+      function(response) {
+        if (response.status === 200) {
+          sessionStorage.setItem("token", response.data.access_token);
+          return email;
+        }
       }
-
-      return email;
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+    );
 }
 
 export default {

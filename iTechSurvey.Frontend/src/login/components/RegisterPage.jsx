@@ -17,14 +17,13 @@ const FormErrors = ({ formErrors }) => (
   </div>
 );
 
-export default class LoginPage extends React.Component {
+export default class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
       password: "",
       formErrors: { email: "", password: "" },
-      loginError: "",
       emailValid: false,
       passwordValid: false,
       formValid: false
@@ -32,14 +31,6 @@ export default class LoginPage extends React.Component {
 
     this.onChange = this.onChange.bind(this);
     this.handleSumbit = this.handleSumbit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.state.User.error !== undefined) {
-      this.setState({
-        loginError: nextProps.state.User.error
-      });
-    }
   }
 
   validateField(fieldName, value) {
@@ -94,29 +85,24 @@ export default class LoginPage extends React.Component {
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
         </div>
-        <form className="login-form group-form" onSubmit={this.handleSumbit}>
-          <div className="login-form__validation-errors">
-            <div>
-              <strong>{this.state.loginError}</strong>
-            </div>
-          </div>
-          <div className="login-form__user-email">
+        <form className="register-form group-form" onSubmit={this.handleSumbit}>
+          <div className="register-form__user-email">
             <label htmlFor="email">Email</label>
             <input
               type="text"
               name="email"
               value={email}
-              className="login-form__input-email group-form"
+              className="register-form__input-email group-form"
               onChange={this.onChange}
             />
           </div>
-          <div className="login-form__user-password">
+          <div className="register-form__user-password">
             <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               value={password}
-              className="login-form__input-password group-form"
+              className="register-form__input-password group-form"
               onChange={this.onChange}
             />
           </div>
@@ -124,7 +110,7 @@ export default class LoginPage extends React.Component {
             type="submit"
             name="submit"
             value="Login"
-            className="login-form__input-submit btn btn-primary"
+            className="register-form__input-submit btn btn-primary"
             disabled={!this.state.formValid}
           />
         </form>

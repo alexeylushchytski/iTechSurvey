@@ -16,9 +16,9 @@ namespace iTechArt.Survey.BLL.Services.AuthService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> ValidateUser(string email)
+        public async Task<bool> ValidateUser(string email, string password)
         {
-            User tempUser = await _unitOfWork.GetRepository<User>().GetByAsync(x => x.Email == email);
+            User tempUser = await _unitOfWork.GetRepository<User>().GetByAsync(x => x.Email == email && x.Password == password);
             if (tempUser != null)
             {
                 return true;

@@ -25,7 +25,7 @@ namespace iTechArt.Survey.WebApi.AuthProvider
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            if (await _authService.ValidateUser(context.UserName))
+            if (await _authService.ValidateUser(context.UserName, context.Password))
             {
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim("sub", context.UserName));

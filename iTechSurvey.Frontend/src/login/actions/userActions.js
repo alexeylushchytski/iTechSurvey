@@ -7,11 +7,16 @@ export const login = (email, password) => {
   return dispatch => {
     dispatch(request(email));
 
-    userService.login(email, password)
-    .then(result => {
-      dispatch(success(result));
-      history.push('/public');
-    });
+    userService.login(email, password).then(
+      result => {
+        dispatch(success(result));
+        history.push("/public");
+      },
+      error => {
+        dispatch(failure(error));
+        history.push("/login");
+      }
+    );
 
     function request(email) {
       return {
@@ -23,12 +28,21 @@ export const login = (email, password) => {
     }
 
     function success(email) {
-        return {
-            type: userConstants.LOGIN_SUCCESS,
-            payload: {
-                email
-            }
+      return {
+        type: userConstants.LOGIN_SUCCESS,
+        payload: {
+          email
         }
+      };
+    }
+
+    function failure(error) {
+      return {
+        type: userConstants.LOGIN_FAILURE,
+        payload: {
+          error: error.response.data.error_description
+        }
+      };
     }
   };
 };

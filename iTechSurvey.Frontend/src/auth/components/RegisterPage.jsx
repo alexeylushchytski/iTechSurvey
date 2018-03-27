@@ -113,65 +113,81 @@ export default class RegisterPage extends React.Component {
   }
 
   render() {
+    return this.renderRegisterPage();
+  }
+
+  renderRegisterPage() {
     const { email, password, name, confirmpassword } = this.state;
-    return (
-      <div className="validation_errors">
-        <div className="panel panel-default">
-          <FormErrors formErrors={this.state.formErrors} />
-          <div className="validation-errors__registration-error panel panel-default">
-            {this.state.registrationError}
+
+    if (!this.props.state.User.loggedIn) {
+      return (
+        <div className="validation_errors">
+          <div className="panel panel-default">
+            <FormErrors formErrors={this.state.formErrors} />
+            <div className="validation-errors__registration-error panel panel-default">
+              {this.state.registrationError}
+            </div>
           </div>
+          <form
+            className="register-form group-form"
+            onSubmit={this.handleSumbit}
+          >
+            <div className="register-form__user-name">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                className="register-form__input-name group-form"
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="register-form__user-email">
+              <label htmlFor="email">Email</label>
+              <input
+                type="text"
+                name="email"
+                value={email}
+                className="register-form__input-email group-form"
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="register-form__user-password">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                className="register-form__input-password group-form"
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="register-form__user-confirmpassword">
+              <label htmlFor="confirmpassword">Confirm Password</label>
+              <input
+                type="password"
+                name="confirmpassword"
+                value={confirmpassword}
+                className="register-form__input-confirmpassword group-form"
+                onChange={this.onChange}
+              />
+            </div>
+            <input
+              type="submit"
+              name="submit"
+              value="Create an account"
+              className="register-form__input-submit btn btn-primary"
+              disabled={!this.state.formValid}
+            />
+          </form>
         </div>
-        <form className="register-form group-form" onSubmit={this.handleSumbit}>
-          <div className="register-form__user-name">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={name}
-              className="register-form__input-name group-form"
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="register-form__user-email">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              name="email"
-              value={email}
-              className="register-form__input-email group-form"
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="register-form__user-password">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              className="register-form__input-password group-form"
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="register-form__user-confirmpassword">
-            <label htmlFor="confirmpassword">Confirm Password</label>
-            <input
-              type="password"
-              name="confirmpassword"
-              value={confirmpassword}
-              className="register-form__input-confirmpassword group-form"
-              onChange={this.onChange}
-            />
-          </div>
-          <input
-            type="submit"
-            name="submit"
-            value="Create an account"
-            className="register-form__input-submit btn btn-primary"
-            disabled={!this.state.formValid}
-          />
-        </form>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div>
+          <strong>You must sign out to create new account</strong>
+        </div>
+      );
+    }
   }
 }

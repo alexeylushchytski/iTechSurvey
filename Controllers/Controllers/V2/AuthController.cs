@@ -37,11 +37,11 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
                 {
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Email already exists!");
                 }
-
                 await _authService.CreateUserAsync(user);
+
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
-            
+
             return Request.CreateResponse(HttpStatusCode.BadRequest, JsonConvert.SerializeObject(ModelState));
         }
     }

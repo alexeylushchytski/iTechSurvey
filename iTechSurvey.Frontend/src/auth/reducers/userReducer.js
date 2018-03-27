@@ -7,7 +7,8 @@ const User = createReducer(initialState, {
   [userConstants.LOGIN_REQUEST](state, action) {
     const newState = Object.assign({}, state);
     newState.loggingIn = true;
-
+    newState.error = "";
+    
     return newState;
   },
   [userConstants.LOGIN_SUCCESS](state, action) {
@@ -29,6 +30,12 @@ const User = createReducer(initialState, {
   [userConstants.REGISTER_FAILURE](state, action) {
     const newState = Object.assign({}, state);
     newState.error = action.payload.error;
+
+    return newState;
+  },
+  [userConstants.REGISTER_SUCCESS](state, action) {
+    const newState = Object.assign({}, state);
+    newState.error ="";
 
     return newState;
   }

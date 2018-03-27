@@ -20,7 +20,6 @@ namespace iTechArt.Survey.WebApi
         {
             var container = IoC.Initialize();
             HttpConfiguration config = new HttpConfiguration();
-            
             ConfigureOAuth(app);
             config.DependencyResolver = new StructureMapWebApiDependencyResolver(container);
             WebApiConfig.Register(config);
@@ -32,18 +31,15 @@ namespace iTechArt.Survey.WebApi
         public void ConfigureOAuth(IAppBuilder app)
         {
             var authService = new AuthService(new SurveyUnitOfWork(new SurveyContext()));
-            OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
+            var OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/v2/Login"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new AuthorizationServerProvider(authService)
             };
-
-            // Token Generation
             app.UseOAuthAuthorizationServer(OAuthServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
-
         }
     }
 }

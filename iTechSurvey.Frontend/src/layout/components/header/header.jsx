@@ -22,33 +22,28 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginLinkAvailable: true,
-      UserName: ""
+      UserName: this.props.state.User.email,
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.state.User.email !== undefined) {
       this.setState({
-        UserName: nextProps.state.User.email
+        UserName: nextProps.state.User.email,
       });
     }
   }
 
   renderHeader() {
-    if (this.state.loginLinkAvailable) {
+    let loginLinkAvailable = this.state.UserName == undefined
+    if (loginLinkAvailable) {
       return (
         <div id="header" className="header">
           <EnvelopePicture />
-          <Link
-            to={Routes.Login.path}
-            className="header__login-link"
-            onClick={() => {
-              this.setState({ loginLinkAvailable: false });
-            }}
-          >
+          <Link to={Routes.Login.path} className="header__login-link">
             Login
           </Link>
+          <strong className="header__userName">{this.state.UserName}</strong>
           <About />
         </div>
       );

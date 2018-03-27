@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using iTechArt.Survey.BLL.DTO.ViewModels;
-using iTechArt.Survey.DomainModel;
 
 namespace iTechArt.Survey.BLL.Interfaces
 {
@@ -10,6 +9,7 @@ namespace iTechArt.Survey.BLL.Interfaces
 
 
         Task<bool> UserExist(string email);
+
 
         Task<int> CreateUserAsync(RegisterUserViewModel user);
     }

@@ -1,7 +1,6 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using iTechArt.Survey.BLL.Interfaces;
-using iTechArt.Survey.BLL.Services.AuthService;
 using Microsoft.Owin.Security.OAuth;
 
 namespace iTechArt.Survey.WebApi.AuthProvider
@@ -16,10 +15,12 @@ namespace iTechArt.Survey.WebApi.AuthProvider
             _authService = authService;
         }
 
+
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated();
         }
+
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {

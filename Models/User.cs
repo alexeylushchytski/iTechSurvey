@@ -11,14 +11,14 @@
         public string Password { get; set; }
 
 
+        public User() { }
+
+
         public User(string name, string email, string password)
         {
             Name = name;
             Email = email;
             Password = password;
         }
-
-
-        public User() { }
     }
 }

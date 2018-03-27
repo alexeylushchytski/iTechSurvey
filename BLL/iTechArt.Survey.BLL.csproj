@@ -45,10 +45,6 @@
       <Project>{501d2f30-76c1-4f8b-a43b-2dff4cf03c21}</Project>
       <Name>iTechart.Survey.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\iTechArt.Common\iTechArt.Common.csproj">
-      <Project>{7377322C-A1D5-430F-9621-8EA655FE6F1E}</Project>
-      <Name>iTechArt.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\iTechArt.Repositories\iTechArt.Repositories.csproj">
       <Project>{1E76A240-115A-4A1E-A2C5-A782B697CF7B}</Project>
       <Name>iTechArt.Repositories</Name>

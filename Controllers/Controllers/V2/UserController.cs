@@ -10,7 +10,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
 {
     [ApiVersion("2")]
     [RoutePrefix("api/v{version:ApiVersion}/User")]
-    [AllowAnonymous]
+    [Authorize]
     public class UserController : ApiController
     {
         private readonly IUserService _userService;

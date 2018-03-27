@@ -58,7 +58,6 @@ export default class Header extends React.Component {
           <EnvelopePicture />
           <strong className="header__userName">{this.state.UserName}</strong>
           <About />
-          
         </div>
       );
   }

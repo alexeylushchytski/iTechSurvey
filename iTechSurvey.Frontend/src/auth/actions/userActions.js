@@ -1,5 +1,4 @@
 import { userConstants } from "../constants/index";
-import axios from "axios";
 import history from "../../helpers/history";
 import userService from "../../utils/user.service";
 
@@ -41,6 +40,46 @@ export const login = (email, password) => {
         type: userConstants.LOGIN_FAILURE,
         payload: {
           error: error.response.data.error_description
+        }
+      };
+    }
+  };
+};
+
+export const registerUser = (name, email, password, confirmpassword) => {
+  return dispatch => {
+    dispatch(registerRequest(name, email, password, confirmpassword));
+
+    userService.registerUser(name, email, password, confirmpassword).then(
+      result => {
+        dispatch(registerSuccess());
+        history.push("/login");
+      },
+      error => {
+        dispatch(registerFailure(error));
+      }
+    );
+
+    function registerRequest(name, email, password, confirmpassword) {
+      return {
+        type: userConstants.REGISTER_REQUEST,
+        payload: {
+          email: email
+        }
+      };
+    }
+
+    function registerSuccess() {
+      return {
+        type: userConstants.REGISTER_SUCCESS
+      };
+    }
+
+    function registerFailure(error) {
+      return {
+        type: userConstants.REGISTER_FAILURE,
+        payload: {
+          error: error.response.data
         }
       };
     }

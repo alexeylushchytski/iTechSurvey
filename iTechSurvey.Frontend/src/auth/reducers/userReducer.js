@@ -15,8 +15,8 @@ const User = createReducer(initialState, {
     newState.loggingIn = false;
     newState.loggedIn = true;
     newState.email = action.payload.email;
-    newState.error = '';
-    
+    newState.error = "";
+
     return newState;
   },
   [userConstants.LOGIN_FAILURE](state, action) {
@@ -24,7 +24,13 @@ const User = createReducer(initialState, {
     newState.error = action.payload.error;
     newState.loggingIn = false;
 
-    return newState
+    return newState;
+  },
+  [userConstants.REGISTER_FAILURE](state, action) {
+    const newState = Object.assign({}, state);
+    newState.error = action.payload.error;
+
+    return newState;
   }
 });
 

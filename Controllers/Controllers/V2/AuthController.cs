@@ -31,7 +31,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
         public async Task<HttpResponseMessage> Register(RegisterUserViewModel user)
         {
             LoggerContext.Current.Log(Request.ToString());
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && !Request.Headers.Contains("Authorization"))
             {
                 if (await _authService.UserExist(user.Email))
                 {

@@ -1,5 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
+import Routes from "../../routes/routes";
+import {Link} from "react-router-dom";
 
 const FormErrors = ({ formErrors }) => (
   <div className="formErrors">
@@ -128,6 +130,7 @@ export default class LoginPage extends React.Component {
             disabled={!this.state.formValid}
           />
         </form>
+        <Link to={Routes.SignUp.path}>Create new account</Link>
       </div>
     );
   }

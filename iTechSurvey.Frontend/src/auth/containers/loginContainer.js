@@ -5,7 +5,7 @@ import LoginPage from "../components/loginPage.jsx";
 
 function mapStateToProps(state) {
   return {
-      state
+    state
   };
 }
 

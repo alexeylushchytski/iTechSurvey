@@ -8,7 +8,6 @@ import history from "../helpers/history";
 
 const initialState = {};
 
-
 const configureStore = initState => {
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

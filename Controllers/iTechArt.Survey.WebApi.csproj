@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\ClaimAuthorizationAttribute.cs" />
     <Compile Include="AuthProvider\AuthorizationServerProvider.cs" />
     <Compile Include="Controllers\V2\AuthController.cs" />
     <Compile Include="Controllers\V2\UserController.cs" />

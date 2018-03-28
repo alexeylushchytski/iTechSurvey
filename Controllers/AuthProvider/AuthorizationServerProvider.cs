@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using iTechArt.Survey.BLL.Interfaces;
+using iTechArt.Survey.BLL.Services.AuthService;
 using Microsoft.Owin.Security.OAuth;
 
 namespace iTechArt.Survey.WebApi.AuthProvider
@@ -30,7 +31,13 @@ namespace iTechArt.Survey.WebApi.AuthProvider
             {
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim("sub", context.UserName));
-                identity.AddClaim(new Claim("role", "user"));
+                identity.AddClaim(new Claim("Role", "User"));
+                var user = await _authService.GetUser(context.UserName);
+                if (user.RoleId == 1)
+                {
+                    identity.AddClaim(new Claim("Role", "Admin"));
+                }
+
                 context.Validated(identity);
             }
             else

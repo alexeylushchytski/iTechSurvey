@@ -38,9 +38,22 @@ namespace iTechArt.Survey.BLL.Services.AuthService
 
         public async Task<int> CreateUserAsync(RegisterUserViewModel user)
         {
-            var tempUser = new User(user.Name, user.Email, user.Password);
+            var tempUser = new User
+            {
+                Name = user.Name,
+                Email = user.Email,
+                Password = user.Password,
+                RoleId = 2
+            };
             _unitOfWork.GetRepository<User>().Add(tempUser);
+
             return await _unitOfWork.CommitAsync();
+        }
+
+
+        public async Task<User> GetUser(string email)
+        {
+            return await _unitOfWork.GetRepository<User>().GetByAsync(x => x.Email == email);
         }
     }
 }

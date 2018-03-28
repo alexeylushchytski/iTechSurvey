@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using iTechArt.Common.Logger.LoggerContext;
 using iTechArt.Survey.BLL.Interfaces;
+using iTechArt.Survey.WebApi.Attributes;
 using Microsoft.Web.Http;
 
 namespace iTechArt.Survey.WebApi.Controllers.V2
 {
     [ApiVersion("2")]
     [RoutePrefix("api/v{version:ApiVersion}/User")]
-    [Authorize]
     public class UserController : ApiController
     {
         private readonly IUserService _userService;
@@ -24,6 +24,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
 
         [HttpGet]
         [Route("Users")]
+        [ClaimsAuthorization(ClaimType = "Role", ClaimValue = "Admin")]
         public async Task<HttpResponseMessage> Users()
         {
             try

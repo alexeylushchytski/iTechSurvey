@@ -15,6 +15,7 @@ namespace iTechart.Survey.DAL.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserEntityConfiguration());
+            modelBuilder.Configurations.Add(new RoleEntityConfiguration());
         }
 
 

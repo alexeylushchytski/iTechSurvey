@@ -185,7 +185,7 @@ export default class RegisterPage extends React.Component {
     } else {
       return (
         <div>
-          <strong>You must sign out to create new account</strong>
+          <strong>You must sign out to create new account.</strong>
         </div>
       );
     }

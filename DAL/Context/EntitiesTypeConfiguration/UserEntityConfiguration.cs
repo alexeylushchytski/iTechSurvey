@@ -12,6 +12,7 @@ namespace iTechart.Survey.DAL.Context.EntitiesTypeConfiguration
             Property(x => x.Name).HasColumnName("Name").IsRequired().HasMaxLength(255);
             Property(x => x.Email).IsRequired().HasColumnName("Email");
             Property(x => x.Password).IsRequired();
+            HasRequired(x => x.Role).WithMany(x => x.Users).HasForeignKey(x => x.RoleId);
         }
     }
 }

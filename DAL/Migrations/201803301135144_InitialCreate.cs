@@ -14,6 +14,7 @@ namespace iTechart.Survey.DAL.Migrations
                         Name = c.String(nullable: false, maxLength: 255),
                         Email = c.String(nullable: false),
                         Password = c.String(nullable: false),
+                        DateTime = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         RoleId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)

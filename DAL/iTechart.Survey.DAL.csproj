@@ -44,9 +44,9 @@
     <Compile Include="Context\EntitiesTypeConfiguration\UserEntityConfiguration.cs" />
     <Compile Include="Context\SurveyContext.cs" />
     <Compile Include="Interfaces\ISurveyUnitOfWork.cs" />
-    <Compile Include="Migrations\201803281400225_InitialCreate.cs" />
-    <Compile Include="Migrations\201803281400225_InitialCreate.Designer.cs">
-      <DependentUpon>201803281400225_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201803301135144_InitialCreate.cs" />
+    <Compile Include="Migrations\201803301135144_InitialCreate.Designer.cs">
+      <DependentUpon>201803301135144_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803281400225_InitialCreate.resx">
-      <DependentUpon>201803281400225_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803301135144_InitialCreate.resx">
+      <DependentUpon>201803301135144_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

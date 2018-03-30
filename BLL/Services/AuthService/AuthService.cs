@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using iTechart.Survey.DAL.Interfaces;
 using iTechArt.Survey.BLL.DTO.ViewModels;
 using iTechArt.Survey.BLL.Interfaces;
@@ -43,7 +44,8 @@ namespace iTechArt.Survey.BLL.Services.AuthService
                 Name = user.Name,
                 Email = user.Email,
                 Password = user.Password,
-                RoleId = 2
+                RoleId = 2,
+                DateTime = DateTime.Now
             };
             _unitOfWork.GetRepository<User>().Add(tempUser);
 

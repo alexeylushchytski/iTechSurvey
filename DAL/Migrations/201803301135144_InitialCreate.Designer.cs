@@ -13,7 +13,7 @@ namespace iTechart.Survey.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201803281400225_InitialCreate"; }
+            get { return "201803301135144_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

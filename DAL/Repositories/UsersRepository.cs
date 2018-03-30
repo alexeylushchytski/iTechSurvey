@@ -17,7 +17,7 @@ namespace iTechart.Survey.DAL.Repositories
             _dbContext = dbContext;
         }
 
-
+                
         public override async Task<IReadOnlyCollection<User>> GetAllAsync()
         {
             return await TableDbSet.Include(x => x.Role).ToListAsync();

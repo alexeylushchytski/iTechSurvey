@@ -15,6 +15,7 @@ namespace iTechArt.Survey.WebApi
             config.EnableCors();
             config.Filters.Add(new AuthorizeAttribute());
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling= Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             var constraintResolver = new DefaultInlineConstraintResolver()
             {
                 ConstraintMap =

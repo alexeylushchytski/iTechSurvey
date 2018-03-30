@@ -19,7 +19,7 @@ namespace iTechArt.Survey.BLL.Services.UserService
 
         public async Task<IReadOnlyCollection<User>> GetUsers()
         {
-            return await _unitOfWork.GetRepository<User>().GetAllAsync();
+            return await _unitOfWork.UsersRepository.GetAllAsync();
         }
     }
 }

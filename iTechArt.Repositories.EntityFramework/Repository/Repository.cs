@@ -12,7 +12,7 @@ namespace iTechArt.Repositories.EntityFramework.Repository
     {
         private readonly IDbContext _dbContext;
 
-        private IDbSet<T> TableDbSet => _dbContext.Set<T>();
+        public IDbSet<T> TableDbSet => _dbContext.Set<T>();
 
 
         public Repository(IDbContext dbContext)
@@ -52,7 +52,7 @@ namespace iTechArt.Repositories.EntityFramework.Repository
         }
 
 
-        public async Task<IReadOnlyCollection<T>> GetAllAsync()
+        public virtual async Task<IReadOnlyCollection<T>> GetAllAsync()
         {
             return await TableDbSet.ToListAsync();
         }

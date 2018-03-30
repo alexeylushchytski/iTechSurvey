@@ -30,7 +30,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
             try
             {
                 LoggerContext.Current.Log(Request.ToString());
-                var response = Request.CreateResponse(HttpStatusCode.OK, await _userService.GetUsers());
+                var response = Request.CreateResponse(HttpStatusCode.OK, await _userService.GetUserViewModels());
                 if (response != null)
                 {
                     LoggerContext.Current.Log(response.ToString());

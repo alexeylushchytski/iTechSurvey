@@ -37,7 +37,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\RegisterUserViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Models\iTechArt.Survey.DomainModel.csproj">
+      <Project>{702C7140-C7A4-40AA-B035-04F3C4D82ADD}</Project>
+      <Name>iTechArt.Survey.DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

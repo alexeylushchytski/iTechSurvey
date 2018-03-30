@@ -1,7 +1,6 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using iTechArt.Survey.BLL.Interfaces;
-using iTechArt.Survey.BLL.Services.AuthService;
 using Microsoft.Owin.Security.OAuth;
 
 namespace iTechArt.Survey.WebApi.AuthProvider

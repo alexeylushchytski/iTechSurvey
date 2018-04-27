@@ -44,6 +44,7 @@ namespace iTechArt.Survey.WebApi.Controllers.V2
                     page,
                     totalPages = (int)Math.Ceiling(users.Count / (double)limit)
                 };
+
                 var response = Request.CreateResponse(HttpStatusCode.OK, responseData);
                 if (response != null)
                 {
